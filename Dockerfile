@@ -1,6 +1,10 @@
 FROM ubuntu:18.04
 
-RUN apt-get -qq update && apt-get -qq install wget ffmpeg nodejs npm -y
+RUN apt-get -qq update && apt-get -qq install wget ffmpeg curl python-software-properties -y
+
+# Install nodejs
+RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+RUN apt-get install nodejs -y
 
 # Imagemagick
 RUN apt-get install build-essential checkinstall libx11-dev libxext-dev zlib1g-dev libpng-dev libjpeg-dev libfreetype6-dev libxml2-dev openexr libopenexr-dev libtiff-dev -y
