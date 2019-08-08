@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 RUN apt-get -qq update && apt-get -qq install wget ffmpeg curl software-properties-common -y
 
 # Install nodejs
-RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install nodejs -y
 
 # Imagemagick
